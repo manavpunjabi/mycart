@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-const Navbar = () => {
+import { connect } from "react-redux";
+const Navbar = ({ cart: { cart } }) => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
       <Link className="navbar-brand" to="/">
-        <i class="fas fa-shopping-cart"></i> mycart
+        <i className="fas fa-shopping-cart"></i> mycart
       </Link>
       <button
         className="navbar-toggler"
@@ -22,7 +22,7 @@ const Navbar = () => {
         <ul className="navbar-nav ml-auto">
           <li className="nav-item ">
             <Link className="nav-link " to="/cart">
-              <i class="fas fa-shopping-basket"></i> Cart
+              <i className="fas fa-shopping-basket"></i> Cart ({cart.length})
             </Link>
           </li>
         </ul>
@@ -31,4 +31,8 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => ({
+  cart: state.cart,
+});
+
+export default connect(mapStateToProps, {})(Navbar);

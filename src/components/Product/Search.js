@@ -27,6 +27,7 @@ const Search = ({ searchProducts }) => {
           value={text}
           onChange={(e) => onChange(e)}
           className="form control"
+          placeholder="Search for products"
         />
       </form>
     </Fragment>

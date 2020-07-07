@@ -20,25 +20,23 @@ const Filter = ({ filterProducts }) => {
           name="filter"
           value={computers}
           onChange={(e) => onChange(e)}
-        />
+        />{" "}
         <label htmlFor="computers">Computers </label>
-
         <br />
         <input
           type="radio"
           name="filter"
           value={clothes}
           onChange={(e) => onChange(e)}
-        />
+        />{" "}
         <label htmlFor="computers">Clothes </label>
-
         <br />
         <input
           type="radio"
           name="filter"
           value={mobiles}
           onChange={(e) => onChange(e)}
-        />
+        />{" "}
         <label htmlFor="computers">Mobiles </label>
       </form>
     </Fragment>

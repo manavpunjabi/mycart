@@ -11,7 +11,7 @@ const Product = ({
           <img src={image} alt={title} className="card-img-top" />
           <div className="card-body">
             <h5>{category}</h5>
-            <h4 class="card-title">
+            <h4 className="card-title">
               <strong>{title}</strong>
             </h4>
 

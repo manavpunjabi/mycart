@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 const Sort = ({ sortProducts }) => {
   const [sort, setSort] = useState([
     {
-      label: "Sort by price",
+      label: "Sort By Price",
       value: "",
     },
     {
