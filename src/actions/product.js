@@ -36,19 +36,16 @@ export const loadProduct = (id) => async (dispatch) => {
   }
 };
 
-export const filterProducts = (categories) => async (dispatch) => {
+export const filterProducts = (category) => async (dispatch) => {
   try {
-    const data = db.products.filter(
-      (product) => product.category === categories
-    );
-    // const data = db.filter((product) => {
-    //   Object.keys(categories).every((p) => {
-    //     return categories[p].some((z) => z == product[p]);
-    //   });
-    // });
+    const data = db;
+    dispatch({
+      type: LOAD_PRODUCTS,
+      payload: data,
+    });
     dispatch({
       type: FILTER_PRODUCTS,
-      payload: data,
+      payload: category,
     });
   } catch (err) {
     dispatch({
@@ -59,21 +56,14 @@ export const filterProducts = (categories) => async (dispatch) => {
 
 export const sortProducts = (type) => async (dispatch) => {
   try {
-    let data;
-    switch (type) {
-      case "low":
-        data = db.products.sort((a, b) => a.price - b.price);
-        break;
-      case "high":
-        data = db.products.sort((a, b) => b.price - a.price);
-
-        break;
-      default:
-        data = data;
-    }
+    const data = db;
+    dispatch({
+      type: LOAD_PRODUCTS,
+      payload: data,
+    });
     dispatch({
       type: SORT_PRODUCTS,
-      payload: data,
+      payload: type,
     });
   } catch (err) {
     dispatch({
@@ -84,12 +74,14 @@ export const sortProducts = (type) => async (dispatch) => {
 
 export const searchProducts = (search) => async (dispatch) => {
   try {
-    const data = db.products.filter((product) =>
-      product.title.toLowerCase().match(search)
-    );
+    const data = db;
+    dispatch({
+      type: LOAD_PRODUCTS,
+      payload: data,
+    });
     dispatch({
       type: SEARCH_PRODUCTS,
-      payload: data,
+      payload: search,
     });
   } catch (err) {
     dispatch({

@@ -29,11 +29,28 @@ export default function (state = initialState, action) {
         loading: false,
       };
     case FILTER_PRODUCTS:
-    case SORT_PRODUCTS:
+      return {
+        ...state,
+        products: state.products.filter(
+          (product) => product.category === payload
+        ),
+        loading: false,
+      };
     case SEARCH_PRODUCTS:
       return {
         ...state,
-        products: payload,
+        products: state.products.filter((product) =>
+          product.title.toLowerCase().match(payload)
+        ),
+      };
+    case SORT_PRODUCTS:
+      return {
+        ...state,
+        products:
+          payload === "high"
+            ? state.products.sort((a, b) => b.price - a.price)
+            : state.products.sort((a, b) => a.price - b.price),
+
         loading: false,
       };
 
