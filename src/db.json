@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "_id": 0,
+      "image": "https://images.pexels.com/photos/1755428/pexels-photo-1755428.jpeg?cs=srgb&dl=woman-wearing-red-dress-standing-on-staircase-1755428.jpg&fm=jpg",
+      "title": "Red Dress",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "category": "clothes",
+      "price": 3000
+    },
+    {
+      "_id": 1,
+      "image": "https://images.pexels.com/photos/904117/pexels-photo-904117.jpeg?cs=srgb&dl=woman-in-blue-dress-standing-near-brown-concrete-bricks-904117.jpg&fm=jpg",
+      "title": "Blue Dress",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "category": "clothes",
+      "price": 2500
+    },
+    {
+      "_id": 2,
+      "image": "https://images.pexels.com/photos/1647976/pexels-photo-1647976.jpeg?cs=srgb&dl=silver-iphone-x-lying-on-pre-lit-string-lights-1647976.jpg&fm=jpg",
+      "title": "iPhone 11 Pro",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "category": "mobiles",
+      "price": 100000
+    },
+    {
+      "_id": 3,
+      "image": "https://images.pexels.com/photos/47261/pexels-photo-47261.jpeg?cs=srgb&dl=samsung-samsung-galaxy-s6-edge-plus-edge-plus-s6-edge-47261.jpg&fm=jpg",
+      "title": "Samsung Galaxy Note",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "category": "mobiles",
+      "price": 50000
+    },
+    {
+      "_id": 4,
+      "image": "https://images.pexels.com/photos/38568/apple-imac-ipad-workplace-38568.jpeg?cs=srgb&dl=apple-technology-ipad-computer-38568.jpg&fm=jpg",
+      "title": "iMac",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "category": "computers",
+      "price": 175000
+    }
+  ]
+}
