@@ -56,11 +56,6 @@ export const filterProducts = (category) => async (dispatch) => {
 
 export const sortProducts = (type) => async (dispatch) => {
   try {
-    const data = db;
-    dispatch({
-      type: LOAD_PRODUCTS,
-      payload: data,
-    });
     dispatch({
       type: SORT_PRODUCTS,
       payload: type,
