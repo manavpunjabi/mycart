@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import CartItem from "../components/Cart/CartItem";
-
-const Checkout = ({ cart: { cart, total } }) => {
+import { clearCart } from "../actions/cart";
+const Checkout = ({ cart: { cart, total }, clearCart }) => {
   return cart.length > 0 ? (
     <Fragment>
       <table className="table mt-2">
@@ -29,7 +29,11 @@ const Checkout = ({ cart: { cart, total } }) => {
         <h3>Total Price</h3>
         <h2>₹ {total}</h2>
         <div className="float-right">
-          <Link to="/buy" className="btn btn-primary">
+          <Link
+            onClick={(e) => clearCart()}
+            to="/buy"
+            className="btn btn-primary"
+          >
             Buy
           </Link>
         </div>
@@ -42,10 +46,11 @@ const Checkout = ({ cart: { cart, total } }) => {
 
 Checkout.propTypes = {
   cart: PropTypes.object.isRequired,
+  clearCart: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   cart: state.cart,
 });
 
-export default connect(mapStateToProps, {})(Checkout);
+export default connect(mapStateToProps, { clearCart })(Checkout);

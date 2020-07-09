@@ -1,4 +1,9 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, CART_ERROR } from "../actions/types";
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  CLEAR_CART,
+  CART_ERROR,
+} from "../actions/types";
 
 const initialState = {
   cart: [],
@@ -21,6 +26,13 @@ export default function (state = initialState, action) {
         ...state,
         cart: state.cart.filter((item) => item._id !== payload._id),
         total: state.total - payload.price,
+        loading: false,
+      };
+    case CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+        total: 0,
         loading: false,
       };
     case CART_ERROR:
